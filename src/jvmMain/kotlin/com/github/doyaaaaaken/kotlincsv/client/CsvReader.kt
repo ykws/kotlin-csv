@@ -21,6 +21,10 @@ actual class CsvReader actual constructor(
      * read csv data as String, and convert into List<List<String>>
      *
      * No need to close InputStream when calling this method.
+     *
+     * @throws CSVParseFormatException when exception happened on parsing CSV
+     * @throws CSVFieldNumDifferentException when reading csv with different fields num on each row
+     * @throws MalformedCSVException when reading malformed csv
      */
     actual fun readAll(data: String): List<List<String>> {
         val br = data.byteInputStream(charsetCode).bufferedReader(charsetCode)
@@ -31,6 +35,10 @@ actual class CsvReader actual constructor(
      * read csv data as File, and convert into List<List<String>>
      *
      * No need to close InputStream when calling this method.
+     *
+     * @throws CSVParseFormatException when exception happened on parsing CSV
+     * @throws CSVFieldNumDifferentException when reading csv with different fields num on each row
+     * @throws MalformedCSVException when reading malformed csv
      */
     fun readAll(file: File): List<List<String>> {
         val br = file.inputStream().bufferedReader(charsetCode)
@@ -41,6 +49,10 @@ actual class CsvReader actual constructor(
      * read csv data as InputStream, and convert into List<List<String>>
      *
      * No need to close InputStream when calling this method.
+     *
+     * @throws CSVParseFormatException when exception happened on parsing CSV
+     * @throws CSVFieldNumDifferentException when reading csv with different fields num on each row
+     * @throws MalformedCSVException when reading malformed csv
      */
     fun readAll(ips: InputStream): List<List<String>> {
         val br = ips.bufferedReader(charsetCode)
@@ -51,6 +63,10 @@ actual class CsvReader actual constructor(
      * read csv data with header, and convert into List<Map<String, String>>
      *
      * No need to close InputStream when calling this method.
+     *
+     * @throws CSVParseFormatException when exception happened on parsing CSV
+     * @throws CSVFieldNumDifferentException when reading csv with different fields num on each row
+     * @throws MalformedCSVException when reading malformed csv
      */
     actual fun readAllWithHeader(data: String): List<Map<String, String>> {
         val br = data.byteInputStream(charsetCode).bufferedReader(charsetCode)
@@ -61,6 +77,10 @@ actual class CsvReader actual constructor(
      * read csv data with header, and convert into List<Map<String, String>>
      *
      * No need to close InputStream when calling this method.
+     *
+     * @throws CSVParseFormatException when exception happened on parsing CSV
+     * @throws CSVFieldNumDifferentException when reading csv with different fields num on each row
+     * @throws MalformedCSVException when reading malformed csv
      */
     fun readAllWithHeader(file: File): List<Map<String, String>> {
         val br = file.inputStream().bufferedReader(charsetCode)
@@ -71,6 +91,10 @@ actual class CsvReader actual constructor(
      * read csv data with header, and convert into List<Map<String, String>>
      *
      * No need to close InputStream when calling this method.
+     *
+     * @throws CSVParseFormatException when exception happened on parsing CSV
+     * @throws CSVFieldNumDifferentException when reading csv with different fields num on each row
+     * @throws MalformedCSVException when reading malformed csv
      */
     fun readAllWithHeader(ips: InputStream): List<Map<String, String>> {
         val br = ips.bufferedReader(charsetCode)
